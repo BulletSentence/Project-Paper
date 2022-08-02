@@ -1,0 +1,118 @@
+\chapter{METODOLOGIA}
+Para este trabalho, foram utilizados como fonte de dados para o algorítimo, o IDS Kitsune e seus datasets com modelos comums de ataques \cite{kitsune}. A metodologia terá uma abordagem experimental, fazendo o teste em diferentes tipos de ambientes domésticos e hardwares. 
+
+\hfill
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+\begin{table}[!hbt]
+\renewcommand\thetable{2}
+\setlength\tabcolsep{3pt} 
+\caption{Hardware utilizado nos testes}
+\centering
+ \begin{tabularx}{\textwidth}{@{}*{4}{L} @{}} 
+ \toprule
+ Hardware & RAM & Processamento & Sistema \\ [0.5ex]
+ \midrule
+ Computador Pessoal &
+ 16 GB &
+ 3.6GHz &
+ Windows 10 \\ 
+ \addlinespace
+ Laptop Pessoal &
+ 8 GB &
+ 2.30GHz &
+ Linux \\ 
+ \addlinespace
+ Computador Pessoal &
+ 16GB &
+ 3.5GHz &
+ MacOS \\ 
+ \addlinespace
+ \bottomrule
+\end{tabularx}
+\fonte{Autoria Própria, 2022} 
+\end{table}
+
+\hfill
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+\begin{table}[!hbt]
+\renewcommand\thetable{3}
+\setlength\tabcolsep{3pt} 
+\caption{Dispositivos IoT conectados a Rede}
+\centering
+ \begin{tabularx}{\textwidth}{@{}*{4}{L} @{}} 
+ \toprule
+ Dispositivo & Tipo & Fabricante \\ [0.5ex]
+ \midrule
+ Echo Dot (3ª Geração) &
+ Auto falante Inteligente &
+ Amazon \\
+ \addlinespace
+ Camera IP &
+ Câmera de Segurança &
+ Intelbraz \\
+ \addlinespace
+ DVR &
+ Gravador Digital Inteligente &
+ HiLook \\
+ \addlinespace
+ \bottomrule
+\end{tabularx}
+\fonte{Autoria Própria, 2022} 
+\end{table}
+
+\section{Implantação na Rede Doméstica}
+Para a implementação, serão realizados os testes com o IDS instalado diretamente no dispositivo alvo, capturando os pacotes do mesmo, também outra abordagem será a instalação direto no roteador da rede.
+
+\section{ALGORÍTIMO DE DETECÇÃO DE ANOMALIAS}
+O algorítimo será implementado em Python3 e adaptado para o uso em ambientes domésticos, utilizando-se de estratégias de análise menos custosas e automatizações, que tornarão o uso menos complexo. 
+
+A implementação do algorítimo e adaptação se dará pela captura automática de pacotes em quantidades baixas (20 mil por análise), para assim tornar o processamento desses pacotes mais rápido. Também, diferentemente do funcionamento do Kitsune, o método de captura, análise e processamento serão de forma automática e recursiva, tornando o processo.
+
+\section{Processamento dos pacotes}
+O processamento dos pacotes possui três fases, a primeira captura os pacotes a partir de bibliotecas externas, na segunda fase, o algorítimo gera uma instancia do pacote, com informações como: ip de origem, ip de destino, protocolos, tempo de resposta, etc, e por fim na terceira fase é onde a Rede Neural Artificial Analisa o comportamento de cada instancia.
+
+\section{Exclusão dos arquivos TCPDUMP}
+Os arquivos tcpdump gerados, contém informações de pacotes de rede usados durante o processamento dos dados, por isso após seu uso, são excluidos do armazenamento, assim impedindo o acesso não autorizado.
+
+\chapter{CRONOGRAMA}
+
+O desenvolvimento deste trabalho se dará da seguinte forma:
+
+\begin{enumerate}
+	\item \label{ela-pro} Elaboração da proposta.
+	\item \label{anI} Análise dos métodos de ataques a dispositivos IoT.
+	\item \label{anII} Configurações dos ambientes de testes.
+	\item \label{anIII} Implementação do algorítimo nos ambientes de teste. 
+	\item \label{dI} Análise dos modelos implementados em hardware estudados no item IV.
+		\item \label{dII} Validação dos resultados preliminares de desempenho.
+	\item \label{tec} Teste e correções.
+		\subitem Comparar desempenho entre diferentes ambientes.
+	\item \label{esc-tcII} Escrita do TCC II.
+\end{enumerate}
+
+\begin{table}[!htbp]
+	\centering
+		\setlength\tabcolsep{15pt}\begin{tabular*}{\textwidth}{|c @{\extracolsep{\fill}} |c|c|c|c|c|c|c|}
+		\hline
+		& \multicolumn{5}{c|}{2022}&\multicolumn{2}{c|}{2023} \\
+		\hline
+		\hspace{-0.4cm} Atvidades \hspace{0.1cm}  & AGO & SET & OUT & NOV & DEZ & JAN & FEV \\
+		\hline
+		\hspace{-0.3cm}\ref{ela-pro} & X & & & & & & \\
+		\hline
+		\hspace{-0.3cm}\ref{anI} & & X & X & & & & \\
+		\hline	
+		\hspace{-0.3cm}\ref{anII} & & & X & & & & \\
+		\hline			
+		\hspace{-0.3cm}\ref{anIII} & & & X & X & & & \\
+		\hline	
+		\hspace{-0.3cm}\ref{dI} & & & & & X & & \\
+		\hline
+		\hspace{-0.3cm}\ref{dII} & & & & & & X & \\
+		\hline	
+		\hspace{-0.3cm}\ref{tec} & & & & & & & X \\
+		\hline	
+		\hspace{-0.3cm}\ref{esc-tcII} & & & & & & & X \\
+		\hline	
+		\end{tabular*}
+\end{table}
